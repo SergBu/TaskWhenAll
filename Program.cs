@@ -28,7 +28,7 @@ async Task<List<bool>> SplitRequestVehiclesAsync(List<int> vehicleIds, int limit
     var result = new List<bool>();
     var requestsCount = vehicleIds.Count / limit + 1;
     var lastRequestLimit = vehicleIds.Count % limit;
-    var partialResults = new List<Response>(); //List<Response>()
+    var partialResults = new List<Response>(); 
     var parallelRequests = new List<Task>();
 
     for (int i = 0; i < requestsCount; i++)
@@ -46,7 +46,6 @@ async Task<List<bool>> SplitRequestVehiclesAsync(List<int> vehicleIds, int limit
     return result;
 }
 
-//сделать респонзы для наглядности
 async Task<Response> GetVehicles(List<int> vehicleIds)
 {
     var result = new List<bool>();
